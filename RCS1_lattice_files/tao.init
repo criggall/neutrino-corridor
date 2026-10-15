@@ -1,0 +1,56 @@
+! Start
+! -----
+
+&tao_start
+  beam_file = 'beam.init'
+/
+
+! Parameters
+! ----------
+
+&tao_params
+  global%lmdif_negligible_merit = 1e-60
+  global%n_opti_cycles = 256
+  global%n_top10_merit = 50
+  global%optimizer = 'lmdif'
+  global%lat_sigma_calc_uses_emit_from = 'beam_init'
+  global%quiet = 'all'
+  global%symbol_import = T
+/
+
+! Design Lattice
+! --------------
+
+&tao_design_lattice
+  design_lattice(1)%file = 'ref.bmad'
+  design_lattice(2)%file = 'inj.bmad'
+  design_lattice(3)%file = 'ext.bmad'
+  n_universes = 3
+/
+
+! Symbolic Numbers
+! ================
+
+! Quadrupole Radial Spacing
+! -------------------------
+
+! In quadrupole magnets, difference between the pole tip radius and the
+! maximal radial extent of the aperture.
+
+! Currently, the maximum beam size (i.e., the maximal radial extent of
+! the beam) is used as a proxy for the maximal radial extent of the
+! aperture. (See also, "Beam size sigma" below for how beam size is
+! defined.)
+
+&symbolic_number
+  quad_radial_spacing = 0.01
+/
+
+! Beam Size Sigma
+! ---------------
+
+! The number of sigma used as the beam size.
+
+&symbolic_number
+  n_sigma = 5
+/

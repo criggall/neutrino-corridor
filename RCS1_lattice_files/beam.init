@@ -1,0 +1,38 @@
+! 1: sup, ref:
+&tao_beam_init
+  ix_universe = 1
+  saved_at = '*'
+  beam_init%a_norm_emit = 2.5e-05
+  beam_init%b_norm_emit = 2.5e-05
+  beam_init%dPz_dZ = 0
+  beam_init%sig_pz = 0.008032984466206901
+  beam_init%sig_z = 0.003
+  beam_init%bunch_charge = 4.3258769118e-07
+  beam_init%species = 'muon'
+/
+
+! 2: sup, inj:
+&tao_beam_init
+  ix_universe = 2
+  saved_at = '*'
+  beam_init%a_norm_emit = 2.5e-05
+  beam_init%b_norm_emit = 2.5e-05
+  beam_init%dPz_dZ = 0
+  beam_init%sig_pz = 0.01078680261430074
+  beam_init%sig_z = 0.003
+  beam_init%bunch_charge = 4.3258769118e-07
+  beam_init%species = 'muon'
+/
+
+! 3: sup, ext:
+&tao_beam_init
+  ix_universe = 3
+  saved_at = '*'
+  beam_init%a_norm_emit = 2.5e-05
+  beam_init%b_norm_emit = 2.5e-05
+  beam_init%dPz_dZ = 0
+  beam_init%sig_pz = 0.006684000855448482
+  beam_init%sig_z = 0.003
+  beam_init%bunch_charge = 4.3258769118e-07
+  beam_init%species = 'muon'
+/
